@@ -37,4 +37,17 @@ const checkProductHasNotBeenOrdered = async (req, res, next) => {
   }
 }
 
-export { checkProductOwnership, checkProductRestaurantOwnership, checkProductHasNotBeenOrdered }
+const checkVisibleAndAvailability = async (req, res, next) => {
+  try{
+    const newProduct = req.body
+    if (newProduct.visibleUntil === null && newProduct.availability === null) {
+      return res.status(422).send('You must set a visibleUntil date or availability')
+    } else {
+      return next()
+    }
+  } catch (err){
+    return res.status(500).send(err.message)
+  }
+}
+
+export { checkProductOwnership, checkProductRestaurantOwnership, checkProductHasNotBeenOrdered, checkVisibleAndAvailability}

@@ -16,6 +16,7 @@ const loadFileRoutes = (app) => {
       ProductValidation.create,
       handleValidation,
       ProductMiddleware.checkProductRestaurantOwnership,
+      ProductMiddleware.checkVisibleAndAvailability,
       ProductController.create
     )
   app.route('/products/popular')
@@ -32,6 +33,7 @@ const loadFileRoutes = (app) => {
       handleFilesUpload(['image'], process.env.PRODUCTS_FOLDER),
       checkEntityExists(Product, 'productId'),
       ProductMiddleware.checkProductOwnership,
+      ProductMiddleware.checkVisibleAndAvailability,
       ProductValidation.update,
       handleValidation,
       ProductController.update

@@ -5,7 +5,7 @@ const indexRestaurant = async function (req, res) {
   try {
     const products = await Product.findAll({
       where: {
-        restaurantId: req.params.restaurantId
+        restaurantId: req.params.restaurantIdS
       },
       include: [
         {
@@ -22,6 +22,7 @@ const indexRestaurant = async function (req, res) {
 const show = async function (req, res) {
   // Only returns PUBLIC information of products
   try {
+    if(req.params.visibleUntil > new Date()) {
     const product = await Product.findByPk(req.params.productId, {
       include: [
         {
@@ -31,6 +32,7 @@ const show = async function (req, res) {
     }
     )
     res.json(product)
+  }
   } catch (err) {
     res.status(500).send(err)
   }
