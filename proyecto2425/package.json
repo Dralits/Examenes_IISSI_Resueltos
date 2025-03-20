@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "copy:env:win": "copy DeliverUS-Backend\\.env.example DeliverUS-Backend\\.env && copy DeliverUS-Frontend-Owner\\.env.example DeliverUS-Frontend-Owner\\.env && copy DeliverUS-Frontend-Customer\\.env.example DeliverUS-Frontend-Customer\\.env",
+    "copy:env:bash": "cp DeliverUS-Backend/.env.example DeliverUS-Backend/.env &&  cp DeliverUS-Frontend-Owner/.env.example DeliverUS-Frontend-Owner/.env &&  cp DeliverUS-Frontend-Customer/.env.example DeliverUS-Frontend-Customer/.env",
+    "install:backend": "npm install && cd DeliverUS-Backend && npm install",
+    "install:frontend:owner": "cd DeliverUS-Frontend-Owner && npm install",
+    "install:frontend:customer": "cd DeliverUS-Frontend-Customer && npm install",
+    "migrate:backend": "cd DeliverUS-Backend && npm run migrate",
+    "test:backend": "npm run migrate:backend && cd DeliverUS-Backend && npm test",
+    "start:backend": "cd DeliverUS-Backend && npm start",
+    "start:frontend:owner": "cd DeliverUS-Frontend-Owner && npx expo start",
+    "start:frontend:customer": "cd DeliverUS-Frontend-Customer && npx expo start",
+    "install:all:win": "npm run copy:env:win && npm run install:backend && npm run migrate:backend && npm run install:frontend:owner && npm run install:frontend:customer",
+    "install:all:bash": "npm run copy:env:bash && npm run install:backend && npm run migrate:backend && npm run install:frontend:owner && npm run install:frontend:customer"
+  }
+}
