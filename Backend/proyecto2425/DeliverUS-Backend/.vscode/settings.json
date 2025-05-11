@@ -7,7 +7,7 @@
     "eslint.format.enable": true,
     "eslint.lintTask.enable": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-      },
+      "source.fixAll.eslint": "explicit"
+    },
 	"thunder-client.saveToWorkspace": true
 }

@@ -125,7 +125,7 @@ const create = async (req, res) => {
     const { restaurantId, products, address } = req.body
     const productos = []
 
-    let price = 0
+    let price = 0 
     for (const { productId, quantity } of products) {
       const product = await Product.findByPk(productId, {transaction})
       productos.push(product)
