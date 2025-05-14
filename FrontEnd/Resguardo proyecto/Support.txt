@@ -4,3 +4,14 @@ startTime: yup
  .string()
  .matches(timeRegex, 'Start time must be in HH:MM format')
  .required('Start time is required'),
+
+
+
+
+
+ onSubmit 
+ values.startTime = values.startTime + ':00'
+
+
+
+ return time.length === 5 ? `${time}:00` : time
