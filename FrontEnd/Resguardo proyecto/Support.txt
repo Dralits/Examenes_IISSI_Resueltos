@@ -1,0 +1,6 @@
+const timeRegex = /^([01]\d|2[0-3]):[0-5]\d$/     
+
+startTime: yup
+ .string()
+ .matches(timeRegex, 'Start time must be in HH:MM format')
+ .required('Start time is required'),
