@@ -56,7 +56,7 @@ export default function EditOrderScreen ({ navigation, route }) {
         style: GlobalStyles.flashStyle,
         titleStyle: GlobalStyles.flashTextStyle
       })
-      navigation.navigate('OrdersScreen', { dirty: true })
+      navigation.navigate('OrdersScreen', { id: order.id })
     } catch (error) {
       console.log(error)
       setBackendErrors(error.errors)
