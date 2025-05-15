@@ -303,6 +303,7 @@ const styles = StyleSheet.create({
   flex: '1',       
   flexDirection: 'row',       
   width: '100%',
+  justifyContent: 'center'
   
   },
   analyticsCell: {
